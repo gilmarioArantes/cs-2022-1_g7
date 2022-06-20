@@ -10,11 +10,11 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 4. Requisito/funcionalidade: (nome/descrição)
 5. Requisito/funcionalidade: (nome/descrição)
 
-### Tecnologia empregada no desenvolvimento:
+### Tecnologia empregada no desenvolvimento: Typescript e nodeJS
 
-### Banco de Dados:
+### Banco de Dados: Firebase 
 
-### Local de deploy:
+### Local de deploy: Cloud Functions
 
 ### Participantes:
 |#|Nome|Usuário|Papel|
