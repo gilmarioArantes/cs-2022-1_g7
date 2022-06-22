@@ -6,9 +6,9 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 #### Requisitos:
 1. Requisito/funcionalidade: Cadastrar na aplicação(Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo e telefone). Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo, senha e telefone).
 2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha).
-3. Requisito/funcionalidade: Listar todos os agendamentos(Os agendamentos devem ser listados em ordem cronologica para o dono).
-4. Requisito/funcionalidade: Cancelar um agendamento(O dono da agenda pode cancelar um agendamento)
-5. Requisito/funcionalidade: (Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone).
+3. Requisito/funcionalidade: Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone). 
+4. Requisito/funcionalidade: Listar todos os agendamentos(Os agendamentos devem ser listados em ordem cronologica para o dono).  
+5. Requisito/funcionalidade: Cancelar um agendamento(O dono da agenda pode cancelar um agendamento).
 
 ### Tecnologia empregada no desenvolvimento: Typescript e nodeJS
 
