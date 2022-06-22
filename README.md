@@ -1,20 +1,20 @@
 ### cs-2022-1_g7
 Repositório definido para a manutenção do controle de versão dos artefatos gerados pelo **Grupo 7** na construção de uma API REST, durante o curso da disciplina **Construção de Software**, do quinto período do curso de **Engenharia de Software**, do **INF/UFG**, no semestre 2022/1.
 
-### Descrição do Produto:
+### Descrição do Produto: Criação de uma API para um sistema de agendamentos por horário, onde seja possível criar, editar e deletar uma agenda e seus horários marcados.
 
 #### Requisitos:
-1. Requisito/funcionalidade: (nome/descrição)
-2. Requisito/funcionalidade: (nome/descrição)
-3. Requisito/funcionalidade: (nome/descrição)
-4. Requisito/funcionalidade: (nome/descrição)
-5. Requisito/funcionalidade: (nome/descrição)
+1. Requisito/funcionalidade: Cadastrar na aplicação(Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo e telefone). Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo, senha e telefone).
+2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha).
+3. Requisito/funcionalidade: Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone). 
+4. Requisito/funcionalidade: Listar todos os agendamentos(Os agendamentos devem ser listados em ordem cronologica para o dono).  
+5. Requisito/funcionalidade: Cancelar um agendamento(O dono da agenda pode cancelar um agendamento).
 
-### Tecnologia empregada no desenvolvimento:
+### Tecnologia empregada no desenvolvimento: Typescript e nodeJS
 
-### Banco de Dados:
+### Banco de Dados: Firebase 
 
-### Local de deploy:
+### Local de deploy: Cloud Functions
 
 ### Participantes:
 |#|Nome|Usuário|Papel|
