@@ -12,7 +12,7 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 
 ### Tecnologia empregada no desenvolvimento: Typescript e nodeJS
 
-### Banco de Dados: Firebase 
+### Banco de Dados: PostgreSQL 
 
 ### Local de deploy: Cloud Functions
 
