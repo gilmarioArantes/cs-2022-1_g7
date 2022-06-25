@@ -1,0 +1,34 @@
+version: '3.5'
+services:
+
+  scheduling:
+    container_name: scheduling
+    image: scheduling:1.0.0
+    build: .
+    ports:
+        - 4140:4140
+    volumes:
+      - .:/scheduling
+      - /scheduling/node_modules
+    networks:
+      - db_net
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:14.1-alpine3.15
+    container_name: postgresSQL
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=scheduling
+    networks:
+      - db_net
+    volumes:
+      - .:/code
+
+networks:
+  db_net:
+    driver: bridge
