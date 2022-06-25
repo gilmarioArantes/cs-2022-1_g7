@@ -12,7 +12,7 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 
 ### Tecnologia empregada no desenvolvimento: Typescript e nodeJS
 
-### Banco de Dados: Firebase 
+### Banco de Dados: PostgreSQL 
 
 ### Local de deploy: Cloud Functions
 
@@ -30,7 +30,7 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 |Sprint|Atividade|Responsável|Início|Fim|Situação|Avaliação|
 |---|---|---|---|---|---|---|
 |1|Formação de Grupos. Definição de Temas|Equipe|03/06/2022|17/06/2022|Concluída|22/06/2022|
-|2|Implementação do Requisito 01|Equipe|18/06/2022|01/07/2022|Em Andamento|06/07/2022|
+|2|Implementação do Requisito 01|Hamze e Guilherme - Criar o projeto, organizar o banco de dados, fazer a integração do banco de dados com o projeto e implementar o cadastro do usuário|18/06/2022|01/07/2022|Em Andamento|06/07/2022|
 |3|Implementação do Requisito 02|Equipe|02/07/2022|15/07/2022|A fazer|20/07/2022|
 |4|Implementação do Requisito 03|Equipe|16/07/2022|29/07/2022|A fazer|03/08/2022|
 |5|Implementação do Requisito 04|Equipe|30/07/2022|12/08/2022|A fazer|17/08/2022|
