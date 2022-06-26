@@ -60,12 +60,12 @@ export class User {
 
     const userObject = {
       id: Joi.string().guid({ version: "uuidv4" }),
-      name: Joi.string().min(3).required(),
+      name: Joi.string().required(),
       email: Joi.string().email().required(),
-      password: Joi.string().min(8).required(),
+      password: Joi.string().required(),
       birth: Joi.object().instance(Date).required(),
       gender: Joi.string().optional(),
-      phone: Joi.string().min(9).required(),
+      phone: Joi.string().required(),
       admin: Joi.boolean().optional(),
     };
 
