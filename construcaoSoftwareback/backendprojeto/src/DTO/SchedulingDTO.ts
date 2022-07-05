@@ -5,5 +5,3 @@ export class SchedulingDTO {
   date: string;
   is_canceled: boolean | undefined;
 }
-
-
