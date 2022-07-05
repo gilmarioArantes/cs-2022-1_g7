@@ -27,9 +27,9 @@ export class ServiceRepository {
   }
 
   async all(): Promise<Result<Service[]>> {
-    const usersORM = await this.repository.find();
+    const servicesORM = await this.repository.find();
 
-    const usersEntity: Service[] = [];
+    const servicesEntity: Service[] = [];
     for (const serviceORM of servicesORM) {
       const serviceEntity = serviceORM.export();
       servicesEntity.push(serviceEntity);
