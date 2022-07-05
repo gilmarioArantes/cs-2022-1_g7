@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import { Injectable } from '@nestjs/common';
 import { CreateSchedulingProps, Scheduling } from '../../entity';
 import { Result } from 'src/shared/result';
