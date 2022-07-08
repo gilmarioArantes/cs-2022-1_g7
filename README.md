@@ -5,7 +5,7 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 
 #### Requisitos:
 1. Requisito/funcionalidade: Cadastrar na aplicação(Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo e telefone). Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo, senha e telefone).
-2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha).
+2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha) e criação do projeto do front-end e implementação da tela de login e cadastro.
 3. Requisito/funcionalidade: Listar todos os serviços do local (O usuário será capaz de ver todos os serviços que o local fornece, junto com nome, descrição e preço).
 4. Requisito/funcionalidade: Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone). 
 5. Requisito/funcionalidade: Listar todos os agendamentos(Os agendamentos devem ser listados em ordem cronologica para o dono).  
