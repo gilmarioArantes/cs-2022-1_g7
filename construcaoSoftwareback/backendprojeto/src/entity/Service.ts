@@ -52,4 +52,34 @@ export class Service{
 
     return Result.ok(value);
   }
+
+  static create(data: CreateServiceProps): Result<Service> {
+    const validated = this.validate({
+      ...data,
+      id: uuidv4(),
+    });
+      
+    if (validated.isFailure) {
+      
+      return Result.fail(validated.error);
+    }
+    return Result.ok(new Service(validated.getValue()));
+  }
+
+  static build(data: ServiceDTO): Result<Service> {
+    const validated = this.validate({
+      ...data,
+    });
+
+    if (validated.isFailure) {
+      return Result.fail(validated.error);
+    }
+    return Result.ok(new Service(validated.getValue()));
+  }
+
+  toDTO(): ServiceDTO {
+    return {
+      ...this.props,
+    };
+  }
 }
