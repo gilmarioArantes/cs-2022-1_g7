@@ -17,6 +17,10 @@ import { AuthModule } from './modules/auth/auth.module';
       database: process.env['DB_NAME'],
       synchronize: true,
       entities: [__dirname + '/**/entity/**/*{.js,.ts}'],
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
     }),
     RepositoryModule,
     controllerModule,
