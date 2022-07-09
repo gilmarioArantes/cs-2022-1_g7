@@ -40,10 +40,10 @@ export class ORMService {
       description: this.description,
     };
 
-    const buildService = Service.build(retrivedData);
-    if(buildService.isFailure) {
-      throw buildService.error;
-    }
-    return buildService.getValue();
+    // const buildService = Service.build(retrivedData);
+    // if(buildService.isFailure) {
+    //   throw buildService.error;
+    // }
+    return new Service(retrivedData);
   }
 }

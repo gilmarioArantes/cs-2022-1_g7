@@ -17,36 +17,36 @@ import { ServiceDTO } from 'src/DTO';
 export class ServiceController {
   constructor(private readonly serviceService: ServiceService) { }
 
-  @ApiOperation({ summary: 'List all Services' })
-  @Get()
-  async all(@Res() res: Response) {
-    const result = await this.serviceService.getAll();
-    if (result.isFailure) {
-      res.status(400).send(result.errorValue());
-      return;
-    }
+  // @ApiOperation({ summary: 'List all Services' })
+  // @Get()
+  // async all(@Res() res: Response) {
+  //   const result = await this.serviceService.getAll();
+  //   if (result.isFailure) {
+  //     res.status(400).send(result.errorValue());
+  //     return;
+  //   }
 
-    let services = result.getValue();
-    let servicesDTO:ServiceDTO[] = [];
+  //   let services = result.getValue();
+  //   let servicesDTO:ServiceDTO[] = [];
 
-    for (let service of services) {
-      servicesDTO.push(service.toDTO());
-    }
+  //   for (let service of services) {
+  //     servicesDTO.push(service.toDTO());
+  //   }
 
-    res.status(200).send(servicesDTO);
-  }
+  //   res.status(200).send(servicesDTO);
+  // }
 
-  @ApiOperation({ summary: 'Create a Service' })
-  @ApiBody(BodyCreateOptions)
-  @Post()
-  async create(@Body() body: CreateServiceProps, @Res() res: Response) {
-    const result = await this.serviceService.createAndSave(body);
-    if (result.isFailure) {
-      res.status(400).send(result.errorValue());
-      return;
-    }
-    const service = result.getValue();
+  // @ApiOperation({ summary: 'Create a Service' })
+  // @ApiBody(BodyCreateOptions)
+  // @Post()
+  // async create(@Body() body: CreateServiceProps, @Res() res: Response) {
+  //   const result = await this.serviceService.createAndSave(body);
+  //   if (result.isFailure) {
+  //     res.status(400).send(result.errorValue());
+  //     return;
+  //   }
+  //   const service = result.getValue();
 
-    res.status(200).send(service.toDTO());
-  }
+  //   res.status(200).send(service.toDTO());
+  // }
 }
