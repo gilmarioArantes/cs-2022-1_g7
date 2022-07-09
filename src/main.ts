@@ -22,6 +22,6 @@ async function bootstrap() {
 
   await app.listen(process.env.APP_PORT);
 
-  console.log(`Listening on https://localhost:${process.env.APP_PORT}`);
+  console.log(`Listening on https://localhost:${process.env.PORT}`);
 }
 bootstrap();
