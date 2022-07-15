@@ -3,6 +3,8 @@ Repositório definido para a manutenção do controle de versão dos artefatos g
 
 ### Descrição do Produto: Criação de uma API para um sistema de agendamentos por horário, onde seja possível criar, editar e deletar uma agenda e seus horários marcados.
 
+Documentação dos serviços: https://schedulingservice.herokuapp.com/docs/#/scheduling/SchedulingController%20all
+
 #### Requisitos:
 1. Requisito/funcionalidade: Cadastrar na aplicação(Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo e telefone). Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo, senha e telefone).
 2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha) e criação do projeto do front-end e implementação da tela de login e cadastro.
