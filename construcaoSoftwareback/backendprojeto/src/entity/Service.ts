@@ -1,5 +1,5 @@
 import * as Joi from 'joi';
-import { ServiceDTO } from 'src/DTO/ServiceDTO';
+import { ServiceDTO } from 'src/DTO';
 import { Result } from 'src/shared/result';
 import { v4 as uuidv4 } from 'uuid';
 

@@ -1,13 +1,15 @@
 import { Global, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ORMUser } from './entity';
+import { ORMScheduling, ORMService, ORMUser } from './entity';
+import { SchedulingRepository } from './SchedulingRepository';
+import { ServiceRepository } from './ServiceRepository';
 import { UserRepository } from './UserRepository';
 
 
 @Global()
 @Module({
-  imports: [TypeOrmModule.forFeature([ORMUser])],
-  providers: [UserRepository],  
-  exports: [UserRepository],
+  imports: [TypeOrmModule.forFeature([ORMUser, ORMScheduling, ORMService])],
+  providers: [UserRepository, SchedulingRepository, ServiceRepository],  
+  exports: [UserRepository, SchedulingRepository, ServiceRepository],
 })
 export class RepositoryModule {}
