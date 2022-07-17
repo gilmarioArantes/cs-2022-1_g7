@@ -1,6 +1,7 @@
 import 'package:construcaosoftware/util/constants.dart';
 import 'package:construcaosoftware/util/text_field_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class RoundedInputField extends StatelessWidget {
   final String? hintText;
@@ -8,12 +9,17 @@ class RoundedInputField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final String? Function(String?)? validator;
   final TextEditingController ?controller;
+  final List<TextInputFormatter>? inputFormatters;
+  final TextInputType? keyBoardType;
+
   const RoundedInputField({
     Key? key,
     this.hintText,
     this.validator,
     this.icon = Icons.person,
     this.controller,
+    this.inputFormatters,
+    this.keyBoardType,
     this.onChanged,
   }) : super(key: key);
 
@@ -24,6 +30,8 @@ class RoundedInputField extends StatelessWidget {
       child: TextFormField(
         validator:validator,
         onChanged: onChanged,
+        keyboardType: keyBoardType,
+          inputFormatters: inputFormatters,
         controller: controller,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(

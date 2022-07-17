@@ -1,5 +1,5 @@
 import 'package:construcaosoftware/screens/login/login_screen.dart';
-import 'package:construcaosoftware/screens/register/singup_screen.dart';
+import 'package:construcaosoftware/screens/register/singUpRegisterScreen.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -12,7 +12,7 @@ class RouteGenerator {
       case '/login':
         return MaterialPageRoute(builder: (_) =>const LoginScreen());
       case '/signup':
-        return MaterialPageRoute(builder: (_) => SignUpScreen());
+        return MaterialPageRoute(builder: (_) => const SignUpScreenRegister());
 
   
       case '/':
