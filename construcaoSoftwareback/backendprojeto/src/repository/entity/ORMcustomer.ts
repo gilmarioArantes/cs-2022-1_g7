@@ -2,13 +2,14 @@ import { CustomerDTO } from "src/DTO";
 import { Customer, Service } from "src/entity";
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity('customer')
 export class ORMCustomer {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
 
     @Column({ type: 'varchar', length: 64, nullable: false })
     name!: string;
-  
+
     @Column({ type: 'varchar', length: 64, nullable: false })
     phone!: string;
 
@@ -34,7 +35,7 @@ export class ORMCustomer {
         };
 
         const buildCustomer = Customer.build(retrivedData);
-        if(buildCustomer.isFailure) {
+        if (buildCustomer.isFailure) {
             throw buildCustomer.error;
         }
         return buildCustomer.getValue();
