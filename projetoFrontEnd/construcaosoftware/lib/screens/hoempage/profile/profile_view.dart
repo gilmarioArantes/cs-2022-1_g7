@@ -1,4 +1,5 @@
 import 'package:construcaosoftware/controller/login/controller_login.dart';
+import 'package:construcaosoftware/widgets/user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
