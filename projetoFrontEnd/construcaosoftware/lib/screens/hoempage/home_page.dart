@@ -1,3 +1,4 @@
+import 'package:construcaosoftware/screens/hoempage/services/services_home.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage>   with SingleTickerProviderStateMix
     _tabController = TabController(
 
         //INITIALINDEX QUAL PAGINA IRA CARREGAR PRIMEIRO
-        length: 3,
+        length: 2,
         vsync: this,
         initialIndex: 1);
   }
@@ -54,29 +55,20 @@ class _HomePageState extends State<HomePage>   with SingleTickerProviderStateMix
               icon: Icon(Icons.home),
             ),
             Tab(
-              text: 'Lojas',
-              icon: Icon(Icons.email),
+              text: 'Perfil',
+              icon: Icon(Icons.person)
             ),
-            Tab(
-              text: 'Promoções',
-               icon: Icon(Icons.account_circle),
-            ),
-            Tab(
-              text: 'Lojas',
-               icon: Icon(Icons.account_circle),
-            ),
+          
           ],
         ),
       ),
       backgroundColor: Colors.white,
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[
-          TelaParaVoce(),
-            TelaParaVoce(),
-              TelaParaVoce(),
-                TelaParaVoce(),
-                
+        children: const <Widget>[
+          ServicesHome(),
+            ServicesHome(),
+             
           // TelaNovidades(),
           // TelaPerfil(),
           //ScreenStoreTab()

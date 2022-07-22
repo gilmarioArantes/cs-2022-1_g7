@@ -1,5 +1,5 @@
 import 'package:construcaosoftware/controller/login/controller_login.dart';
-import 'package:construcaosoftware/model/Usuario.dart';
+import 'package:construcaosoftware/controller/url/util_status_service.dart';
 import 'package:construcaosoftware/model/UsuarioRegister.dart';
 import 'package:construcaosoftware/screens/login/login_screen.dart';
 import 'package:construcaosoftware/screens/register/components/background.dart';
@@ -143,8 +143,11 @@ class _BodyState extends State<Body> {
                 ),
                    GetBuilder<ControllerLogin>(
                   builder: (controller) {
-                    return RoundedButton(
-                      loading: const Text('Cadastrar'),
+                    return Obx(
+                          () => RoundedButton(
+                      loading: controller.mStatusLogin == UtilServiceStatus.loading?
+                      const CircularProgressIndicator(color: Colors.white,):
+                       const Text('Cadastrar'),
                       text: "Cadastrar",
                       press:  () {
 
@@ -173,21 +176,16 @@ class _BodyState extends State<Body> {
                           
                               }
                             },
-                    );
+                      )  );
                   }
                 ),
                 SizedBox(height: size.height * 0.03),
                 AlreadyHaveAnAccountCheck(
                   login: false,
                   press: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const LoginScreen();
-                        },
-                      ),
-                    );
+                      Navigator.of(context).pushNamedAndRemoveUntil('/homePage', (Route<dynamic> route) => false);
+
+                       
                   },
                 ),
                 const OrDivider(),
