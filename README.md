@@ -8,8 +8,8 @@ Documentação dos serviços: https://schedulingservice.herokuapp.com/docs/#/sch
 #### Requisitos:
 1. Requisito/funcionalidade: Cadastrar na aplicação(Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo e telefone). Se cadastrar na aplicação com informações básicas (E-mail, nome, data de nascimento, sexo, senha e telefone).
 2. Requisito/funcionalidade: Logar na aplicação (O usuário deve ser capaz de logar na aplicação fornecendo os dados de e-mail e senha) e criação do projeto do front-end e implementação da tela de login e cadastro.
-3. Requisito/funcionalidade: Listar todos os serviços do local (O usuário será capaz de ver todos os serviços que o local fornece, junto com nome, descrição e preço).
-4. Requisito/funcionalidade: Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone). 
+3. Requisito/funcionalidade: (Guilherme, Gabriel, Dener e Giancarlo: Listar todos os serviços do local (O usuário será capaz de ver todos os serviços que o local fornece, junto com nome, descrição e preço). Hamze(Conectar a tela de login e cadastro com o back-end, consumindo as apis geradas, criando as classes de usuário padrão, integrando a gerência de estado e iniciando a tela de perfil).
+4. Requisito/funcionalidade:  (Guilherme, Gabriel, Dener e Giancarlo: Realizar um agendamento(Ao realizar um agendamento, deve ser obrigatório informar alguns dados como nome e telefone). Hamze(Terminar a tela de perfil do usuário e iniciar a listagem de todos os serviços na home).
 5. Requisito/funcionalidade: Listar todos os agendamentos(Os agendamentos devem ser listados em ordem cronologica para o dono).  
 6. Requisito/funcionalidade: Cancelar um agendamento(O dono da agenda pode cancelar um agendamento).
 
