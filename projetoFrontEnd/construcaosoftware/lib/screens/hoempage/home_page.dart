@@ -1,3 +1,4 @@
+import 'package:construcaosoftware/screens/hoempage/profile/profile_view.dart';
 import 'package:construcaosoftware/screens/hoempage/services/services_home.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +68,7 @@ class _HomePageState extends State<HomePage>   with SingleTickerProviderStateMix
         controller: _tabController,
         children: const <Widget>[
           ServicesHome(),
-            ServicesHome(),
+            ProfileView(),
              
           // TelaNovidades(),
           // TelaPerfil(),
