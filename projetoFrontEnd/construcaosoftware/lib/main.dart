@@ -1,7 +1,11 @@
+import 'package:construcaosoftware/controller/services/init_services.dart';
 import 'package:construcaosoftware/routes/routes_generator.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+   WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await initServices();
   runApp(const MyApp());
 }
 

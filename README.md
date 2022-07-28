@@ -35,6 +35,6 @@ Documentação dos serviços: https://schedulingservice.herokuapp.com/docs/#/sch
 |1|Formação de Grupos. Definição de Temas|Equipe|03/06/2022|17/06/2022|Concluída|22/06/2022|
 |2|Implementação do Requisito 01|Hamze e Guilherme - Criar o projeto, organizar o banco de dados, fazer a integração do banco de dados com o projeto e implementar o cadastro do usuário|18/06/2022|01/07/2022|Concluído|06/07/2022|
 |3|Implementação do Requisito 02|Guilherme implementar a função no back-end; Hamze fazer toda a configuração do projeto no front, bibliotecas mecessárias, IU de login e registro e componentes padrões do Aplicativo; Demais membros testar e popular o banco de dados.|02/07/2022|15/07/2022|Concluído|20/07/2022|
-|4|Implementação do Requisito 03|Equipe|16/07/2022|29/07/2022|A fazer|03/08/2022|
+|4Implementação do Requisito 03||Guilherme, Gabriel, GianCarlo e Dener implementar a listagem de serviços. Hamze implementa ra IU da listagem de serviços no front-end + conexão das api's com a tela de login e registro.|16/07/2022|29/07/2022|Concluído|03/08/2022|
 |5|Implementação do Requisito 04|Equipe|30/07/2022|12/08/2022|A fazer|17/08/2022|
 |6|Implementação do Requisito 05|Equipe|13/08/2022|26/08/2022|A fazer|31/08/2022|

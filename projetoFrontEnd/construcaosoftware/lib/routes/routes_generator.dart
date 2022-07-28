@@ -1,3 +1,4 @@
+import 'package:construcaosoftware/screens/hoempage/home_page.dart';
 import 'package:construcaosoftware/screens/login/login_screen.dart';
 import 'package:construcaosoftware/screens/register/singUpRegisterScreen.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) =>const LoginScreen());
       case '/signup':
         return MaterialPageRoute(builder: (_) => const SignUpScreenRegister());
-
-  
+      case '/homePage':
+        return MaterialPageRoute(builder: (_) => const HomePage());  
       case '/':
       default:
         return MaterialPageRoute(builder: (_) =>const LoginScreen(),

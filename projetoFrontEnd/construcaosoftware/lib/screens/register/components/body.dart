@@ -1,3 +1,6 @@
+import 'package:construcaosoftware/controller/login/controller_login.dart';
+import 'package:construcaosoftware/controller/url/util_status_service.dart';
+import 'package:construcaosoftware/model/UsuarioRegister.dart';
 import 'package:construcaosoftware/screens/login/login_screen.dart';
 import 'package:construcaosoftware/screens/register/components/background.dart';
 import 'package:construcaosoftware/screens/register/components/or_divider.dart';
@@ -7,8 +10,11 @@ import 'package:construcaosoftware/util/already_have_an_account.dart';
 import 'package:construcaosoftware/util/rounded_button.dart';
 import 'package:construcaosoftware/util/rounded_input_field.dart';
 import 'package:construcaosoftware/util/rounded_password_field.dart';
+import 'package:construcaosoftware/util/util_date.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Body extends StatefulWidget {
@@ -27,7 +33,7 @@ class _BodyState extends State<Body> {
   final TextEditingController genderController = TextEditingController();
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   String valueGender = '';
-
+  DateTime ? dateUser;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   var phoneMaskFormatter = MaskTextInputFormatter(mask: '(##) #####-####', filter: {'#': RegExp(r'[0-9]')});
@@ -100,7 +106,23 @@ class _BodyState extends State<Body> {
                     return null;
                   },
                   hintText: "Data de nascimento",
-                  onChanged: (value) {},
+                      onChanged: (value) {
+                                  if (value.toString().length == 10) {
+                                    var dateFormated =
+                                        UtilDate.formatDataToDatabase(value);
+
+                                    try {
+                                      dateUser =
+                                          DateFormat('yyyy-MM-dd')
+                                              .parseStrict(dateFormated);
+                                    } catch (e) {
+                                      dateUser = null;
+                                    }
+                                  } else {
+                                    dateUser = null;
+                                  }
+
+                                },
                 ),
                
                
@@ -119,60 +141,51 @@ class _BodyState extends State<Body> {
                     valueGender = value;
                   },
                 ),
-                RoundedButton(
-                  loading: const Text('Cadastrar'),
-                  text: "Cadastrar",
-                  press: () {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
+                   GetBuilder<ControllerLogin>(
+                  builder: (controller) {
+                    return Obx(
+                          () => RoundedButton(
+                      loading: controller.mStatusLogin == UtilServiceStatus.loading?
+                      const CircularProgressIndicator(color: Colors.white,):
+                       const Text('Cadastrar'),
+                      text: "Cadastrar",
+                      press:  () {
 
-                      if (passController.text != passController.text) {
-                        Fluttertoast.showToast(
-                            msg: "Senhas não coincidem!",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.red,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
-
-                        return;
-                      }
-                    }
-                    //     context.read<UserManager>().signUp(
-                    //         user: UserStore(
-                    //   email: emailController.text,
-                    //   password: passController.text,
-                    //   name: nomeController.text
-                    // ),
-                    //         onSuccess: () {
-                    //            Navigator.pushNamed(context, '/');
-                    //         },
-                    //         onFail: (e) {
-                    //           Fluttertoast.showToast(
-                    //               msg: "Falha ao cadastrar $e",
-                    //               toastLength: Toast.LENGTH_SHORT,
-                    //               gravity: ToastGravity.CENTER,
-                    //               timeInSecForIosWeb: 1,
-                    //               backgroundColor: Colors.red,
-                    //               textColor: Colors.white,
-                    //               fontSize: 16.0);
-                    //         });
-                    //    }
-                  },
+                        if(formKey.currentState!.validate()){
+                            controller.registerUser(UsuarioRegister(
+                              email: emailController.text,
+                              password: passController.text,
+                              name: nomeController.text,
+                              admin: false,
+                              gender: valueGender,
+                              phone: phoneController.text,
+                              birth: birthController.text,
+                            ),
+                            fail: (e){
+                               Fluttertoast.showToast(
+                                  msg: e,
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            });
+                            
+                            
+                          
+                              }
+                            },
+                      )  );
+                  }
                 ),
                 SizedBox(height: size.height * 0.03),
                 AlreadyHaveAnAccountCheck(
                   login: false,
                   press: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const LoginScreen();
-                        },
-                      ),
-                    );
+                      Navigator.of(context).pushNamedAndRemoveUntil('/homePage', (Route<dynamic> route) => false);
+
+                       
                   },
                 ),
                 const OrDivider(),

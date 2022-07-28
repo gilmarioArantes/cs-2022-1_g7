@@ -1,4 +1,8 @@
+// ignore_for_file: unrelated_type_equality_checks
+
+import 'package:construcaosoftware/controller/login/controller_login.dart';
 import 'package:construcaosoftware/helpers/validators.dart';
+import 'package:construcaosoftware/controller/url/util_status_service.dart';
 import 'package:construcaosoftware/screens/register/components/background.dart';
 import 'package:construcaosoftware/screens/register/singUpRegisterScreen.dart';
 import 'package:construcaosoftware/util/already_have_an_account.dart';
@@ -6,6 +10,8 @@ import 'package:construcaosoftware/util/rounded_button.dart';
 import 'package:construcaosoftware/util/rounded_input_field.dart';
 import 'package:construcaosoftware/util/rounded_password_field.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 
 
@@ -62,34 +68,39 @@ class _BodyLoginState extends State<BodyLogin> {
                         return null;
                       },
                 ),
-                RoundedButton(
-                  loading: const Text('Login'),
-                  text: "Login",
-                  press:  () {
+                GetBuilder<ControllerLogin>(
+                  builder: (controller) {
+                    return  Obx(
+                          () => RoundedButton(
+                      loading: controller.mStatusLogin == UtilServiceStatus.loading?
+                      const CircularProgressIndicator(color: Colors.white,):
+                       const Text('Login'),
+                      text: "Login",
+                      
+                      press:  () {
 
-                    if(formKey.currentState!.validate()){
-
-                            //    context.read<UserManager>().signIn(
-                            //   user:UserStore(
-                            //     email: emailController.text,
-                            //     password: passController.text
-                                
-                            //   ),
-                            //    onFail: (e){
-                            // ScaffoldMessenger.of(context).showSnackBar(
-                            //       SnackBar(
-                            //         content: Text('Falha ao entrar: $e'),
-                            //         backgroundColor: Colors.red,
-                            //       )
-                            //     );
-                            //   },
-                            //   onSuccess: (){
-                            //      Navigator.pushNamed(context, '/');
-                            //   }
+                        if(formKey.currentState!.validate()){
+                            controller.loginUser(emailController.text, passController.text,
+                            done: (){
+                              Navigator.of(context).pushNamedAndRemoveUntil('/homePage', (Route<dynamic> route) => false);
+                            },
+                            fail: (e){
+                               Fluttertoast.showToast(
+                                  msg: e,
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            });
                             
-                           // );
-                          }
-                        },
+                            
+                          
+                              }
+                            },
+                    ));
+                  }
                 ),
                 SizedBox(height: size.height * 0.03),
                 AlreadyHaveAnAccountCheck(
