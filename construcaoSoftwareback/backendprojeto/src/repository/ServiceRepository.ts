@@ -10,7 +10,7 @@ export class ServiceRepository {
   constructor(
     @InjectRepository(ORMService)
     private readonly repository: Repository<ORMService>,
-  ) {}
+  ) { }
 
   async save(data: Service): Promise<Result<void>> {
     try {
@@ -44,4 +44,6 @@ export class ServiceRepository {
     }
     return Result.ok(serviceORM.export());
   }
+
+
 }
